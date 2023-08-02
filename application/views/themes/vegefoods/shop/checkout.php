@@ -43,7 +43,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                     <div class="form-group">
                         <label for="kurier" class="form-control-label">Pilih Kurir:</label>
-                        <select class="form-control kurir" name="courier" id="courier">
+                        <select class="form-control kurir" name="courier" id="courier" required>
                             <option value="0">-- pilih kurir --</option>
                             <option value="jne">JNE</option>
                             <option value="pos">POS</option>
@@ -51,6 +51,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="coba" class="form-control-label">Pilih :</label>
+                        <div id="coba">
+                            <ul class="list-group" id="ongkir"></ul>
+                        </div>
+                        <div id="loading">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xl-5">
                     <div class="row mt-5 pt-3">
@@ -60,10 +68,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <p class="d-flex">
                                     <span>Subtotal</span>
                                     <span>Rp <?php echo format_rupiah($subtotal); ?></span>
+                                    <input type="hidden" name="subtotal" value="<?php echo $subtotal; ?>" class="form-control" id="subtotal" required>
                                 </p>
                                 <p class="d-flex">
                                     <span>Ongkos kirim</span>
-                                    <span><?php echo $ongkir; ?></span>
+                                    <!-- <span id="text_biaya_ongkir">0</span> -->
+                                    <input type="text" name="biaya_ongkir" value="" class="form-control" id="biaya_ongkir" required readonly>
                                 </p>
                                 <p class="d-flex">
                                     <span>Kupon</span>
@@ -72,7 +82,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <hr>
                                 <p class="d-flex total-price">
                                     <span>Total</span>
-                                    <span>Rp <?php echo format_rupiah($total); ?></span>
+                                    <span id="text_total">Rp <?php echo format_rupiah($total); ?></span>
+                                    <input type="hidden" name="total" value="<?php echo $total; ?>" class="form-control" id="total" required>
                                 </p>
                             </div>
                         </div>
@@ -82,7 +93,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                            <label><input type="radio" name="payment" class="mr-2" value="1"> Transfer bank</label>
+                                            <label><input type="radio" name="payment" class="mr-2" value="1" required> Transfer bank</label>
                                         </div>
                                     </div>
                                 </div>

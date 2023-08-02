@@ -70,7 +70,7 @@ class Regions extends CI_Controller
     public function cek_ongkir()
     {
         $city_origin = $this->input->post('city_origin');
-        $city_destination = $this->input->post('city_destination');
+        $city_destination = $this->input->post('city_destination') ?? '278';
         $courier = $this->input->post('courier');
         $weight = $this->input->post('weight');
 
@@ -97,7 +97,7 @@ class Regions extends CI_Controller
 
         curl_close($curl);
 
-        $response = json_encode($response);
+        // $response = json_encode($response);
         $this->output->set_content_type('application/json')
             ->set_output($response);
     }

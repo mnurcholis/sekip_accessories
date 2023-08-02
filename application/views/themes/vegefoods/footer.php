@@ -180,11 +180,45 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 weight: weight,
             },
             success: function(res) {
-                console.log(res);
+                // console.log(res);
+                if (res) {
+                    // console.log(res.rajaongkir.results[0].costs);
+                    // $('#loading').html('');
+                    $('#ongkir').empty();
+                    $('.ongkir').addClass('d-block');
+                    $.each(res.rajaongkir.results[0].costs, function(key, value) {
+                        // console.log(value.cost[0].value);
+                        $('#ongkir').append(
+                            '<li class="list-group-item">' + value.service.toUpperCase() +
+                            '    <button class="btn btn-info" type="button" onclick="myFunction(' + value.cost[0].value + ')"> Pilih </button></li>'
+                        )
+                    });
+
+                }
             }
         })
 
     });
+
+    function myFunction(ongkir) {
+        let total = parseInt($('#total').val());
+        let subtotal = parseInt($('#subtotal').val());
+
+        $('#text_biaya_ongkir').text(formatRupiah(ongkir));
+        $('#text_total').text(formatRupiah(subtotal + ongkir));
+        $('#biaya_ongkir').val(ongkir);
+        $('#total').val(subtotal + ongkir);
+    }
+
+    function formatRupiah(number) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0
+        });
+
+        return formatter.format(number);
+    }
 </script>
 
 </body>
