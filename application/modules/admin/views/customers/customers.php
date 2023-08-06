@@ -39,7 +39,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <th scope="col">ID</th>
                                 <th scope="col">Foto</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">Email</th>
                                 <th scope="col">No. HP</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col"></th>
@@ -136,7 +135,6 @@ $(document).ready(function() {
             return '<a href="'+ url +'">'+ data.name +'</a>';
         }
         },
-        {"data": "email"},
         {"data": "phone_number"},
         {"data": "address"},
         {"mRender": function (data, type, row) {

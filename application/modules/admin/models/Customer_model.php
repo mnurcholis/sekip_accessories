@@ -20,7 +20,7 @@ class Customer_model extends CI_Model {
     public function get_all_customers()
     {
         $customers = $this->db->query("
-            SELECT c.user_id as id, c.profile_picture, c.name, u.email, c.phone_number, c.address
+            SELECT c.user_id as id, c.profile_picture, c.name, c.phone_number, c.address
             FROM customers c
             JOIN users u
                 ON u.id = c.user_id
@@ -58,7 +58,7 @@ class Customer_model extends CI_Model {
     public function customer_data($id)
     {
         $customer = $this->db->query("
-            SELECT c.user_id as id, c.profile_picture, c.name, u.email, c.phone_number, c.address, u.register_date
+            SELECT c.user_id as id, c.profile_picture, c.name, c.phone_number, c.address, u.register_date
             FROM customers c
             JOIN users u
                 ON u.id = c.user_id

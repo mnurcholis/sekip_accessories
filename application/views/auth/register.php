@@ -70,12 +70,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <?php echo form_error('phone_number'); ?>
                             </div>
                         </div>
-                        <div class="col-2">
-                            <div class="input-group">
-                                <input class="input--style-2" minlength="10" type="email" placeholder="Email" name="email" value="<?php echo set_value('email'); ?>" required>
-                                <?php echo form_error('email'); ?>
-                            </div>
-                        </div>
                     </div>
                     <div class="input-group">
                         <h3>Alamat</h3>
@@ -175,22 +169,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             }
         });
     });
-
-    // $('#kelurahan').change(function() {
-    //     var kelurahan = $(this).val();
-    //     var kecamatan = $("#kecamatan").val();
-    //     var kabupaten = $("#kabupaten").val();
-    //     var provinsi = $("#provinsi").val();
-
-    //     $.ajax({
-    //         type: "GET",
-    //         url: "<?php echo site_url('regions/kelurahan?kelurahan='); ?>" + kelurahan + '&kecamatan=' + kecamatan + '&kabupaten=' + kabupaten + '&provinsi=' + provinsi,
-    //         success: function(res) {
-    //             console.log(res);
-    //         }
-    //     });
-    // });
 </script>
 
 </html>
-<!-- end document-->

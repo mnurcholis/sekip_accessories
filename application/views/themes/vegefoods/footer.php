@@ -206,7 +206,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         $('#text_biaya_ongkir').text(formatRupiah(ongkir));
         $('#text_total').text(formatRupiah(subtotal + ongkir));
-        $('#biaya_ongkir').val(ongkir);
+        $('#biaya_ongkir').val(formatRupiah(ongkir));
         $('#total').val(subtotal + ongkir);
     }
 

@@ -42,18 +42,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="name">Nama:</label>
                                 <input type="text" name="name" value="<?php echo set_value('name', get_admin_name()); ?>" class="form-control" id="name" minlength="4" maxlength="255" required>
                                 <?php echo form_error('name'); ?>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="email">Email:</label>
-                                <input type="email" name="email" value="<?php echo set_value('email', $user->email); ?>" class="form-control" id="email" minlength="10" maxlength="255" required>
-                                <?php echo form_error('email'); ?>
                             </div>
                         </div>
                     </div>
@@ -112,9 +105,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h5 class="h3">
                         <?php echo get_admin_name(); ?>
                     </h5>
-                    <div class="h5 mt-4">
-                      <i class="fa fa-at mr-2"></i><?php echo $user->email; ?>
-                    </div>
                   </div>
                 </div>
               </div>

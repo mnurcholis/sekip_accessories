@@ -24,7 +24,6 @@ class Register extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
         $this->form_validation->set_rules('name', 'Nama lengkap', 'required');
         $this->form_validation->set_rules('phone_number', 'No. HP', 'required|min_length[9]|max_length[16]|is_unique[customers.phone_number]');
-        $this->form_validation->set_rules('email', 'Email', 'required|min_length[10]');
         // $this->form_validation->set_rules('address', 'Alamat', 'required');
 
         if ($this->form_validation->run() === FALSE) {
@@ -34,7 +33,6 @@ class Register extends CI_Controller
             $password = $this->input->post('password');
             $name = $this->input->post('name');
             $phone_number = $this->input->post('phone_number');
-            $email = $this->input->post('email');
             $provinsi = $this->input->post('provinsi');
             $kabupaten = $this->input->post('kabupaten');
             $kecamatan = $this->input->post('kecamatan');
@@ -46,7 +44,6 @@ class Register extends CI_Controller
             $password = password_hash($password, PASSWORD_BCRYPT);
 
             $user_data = array(
-                'email' => $email,
                 'username' => $username,
                 'password' => $password,
                 'role_id' => 2,
@@ -78,7 +75,8 @@ class Register extends CI_Controller
 
             $this->session->set_flashdata('store_flash', 'Pendaftaran akun berhasil!');
 
-            redirect('customer');
+            // redirect('customer');
+            $this->load->view('auth/register_done');
         }
     }
 }

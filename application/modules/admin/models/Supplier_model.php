@@ -17,8 +17,6 @@ class Supplier_model extends CI_Model
                 ON suppliers.products_id = products.id")->result();
 
         return $data;
-
-        // return $this->db->order_by('id_supplier', 'ASC')->get('suppliers')->result();
     }
 
     public function supplier_data($id)
