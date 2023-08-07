@@ -347,7 +347,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     },
                     {
                         "mRender": function(data, type, row) {
-                            return '<div class="text-right"><a href="#" data-id="' + row.id + '" class="btn btn-warning btn-sm btnEdit"><i class="fa fa-edit"></i></a><a href="#" data-id="' + row.id + '" class="btn btn-danger btn-sm btnDelete"><i class="fa fa-trash"></i></a></div>';
+                            return '<div class="text-right"><a href="' + `<?= site_url('admin/keluhans/lihat/') ?>` + row.id + '" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i> lihat</a></div>';
                         }
                     }
                 ],

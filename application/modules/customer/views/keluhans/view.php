@@ -42,6 +42,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <td>
                   <img alt="Pembayaran order #<?php echo $keluhan->order_number; ?>" class="img img-fluid" src="<?php echo base_url('assets/uploads/keluhans/' . $keluhan->bukti_bayar); ?>">
               </tr>
+              <?php
+              if (!is_null($keluhan->balasan_keluhan)) {
+                echo "
+                  <tr>
+                      <td>Balasan Keluhan</td>
+                      <td> : <b>" . $keluhan->balasan_keluhan . "</b></td>
+                  </tr>
+                  ";
+              }
+              ?>
             </table>
           </div>
         </div>

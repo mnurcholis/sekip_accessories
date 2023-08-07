@@ -37,14 +37,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
 
                     <div class="form-group">
-                        <label for="note" class="form-control-label">Catatan:</label>
+                        <label for="note" class="form-control-label">Catatan Alamat:</label>
                         <textarea name="note" class="form-control" id="note"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="kurier" class="form-control-label">Pilih Kurir:</label>
+                        <label for="kurier" class="form-control-label">Pilih Ekspedisi:</label>
                         <select class="form-control kurir" name="courier" id="courier" required>
-                            <option value="0">-- pilih kurir --</option>
+                            <option value="0">-- pilih Ekspedisi --</option>
                             <option value="jne">JNE</option>
                             <option value="pos">POS</option>
                             <option value="tiki">TIKI</option>
